@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-primary;
+    }
+
+    table {
+        @apply w-full
+    }
+
+    table body {
+        @apply p-8
+    }
+    th {
+        @apply bg-blue py-2 rounded-sm border-r-2 border-white border-solid text-white text-sm ;
+    }
+
+    td {
+        @apply bg-white;
+    }
+
+    main {
+        @apply bg-gradient-to-r from-white  to-blue/20 text-primary min-h-[100vh] py-8 px-16 min-w-full;
+    }
+
+    form {
+        @apply bg-white rounded-lg shadow-primary p-8 rounded-md mt-8 grid grid-cols-2 caret-blue placeholder-blue;
+    }
+
+    form label {
+        @apply mb-2
+    }
+
+
+    input[type='text'] {
+        @apply bg-white rounded-md border-primary min-w-full ring-1 ring-blue focus:border-primary focus:ring-2 focus:ring-blue text-blue !important;
+    }
+
+    input[type='email'] {
+        @apply bg-white rounded-md border-primary min-w-full ring-1 ring-blue focus:border-primary focus:ring-2 focus:ring-blue text-blue !important;
+    }
+
+    input[type='password'] {
+        @apply bg-white rounded-md border-primary min-w-full ring-1 ring-blue focus:border-primary focus:ring-2 focus:ring-blue text-blue placeholder-blue !important;
+    }
+
+    input[type='checkbox'] {
+        @apply rounded-full bg-white cursor-pointer w-4 h-4 border-primary ring-0 ring-offset-0 active:ring-0 focus:ring-0 checked:ring-0 checked:ring-offset-0 checked:bg-dark-green checked:border-0 active:border-0 focus:ring-offset-0 !important;
+    }
+
+    input[type='radio'] {
+        @apply rounded-full bg-white cursor-pointer w-4 h-4 border-primary ring-0 ring-offset-0 active:ring-0 focus:ring-0 checked:ring-0 checked:ring-offset-0 checked:bg-dark-green checked:border-0 active:border-0 focus:ring-offset-0 !important;
+    }
+
+    textarea {
+        @apply bg-white rounded-md border-primary min-w-full ring-1 ring-blue focus:border-primary focus:ring-2 focus:ring-blue text-blue placeholder-blue !important;
+    }
+
+    select {
+        @apply bg-white rounded-md border-primary border-2 text-primary w-full;
+    }
+
+    a {
+        @apply text-sm no-underline;
+    }
+
+    .disabled {
+        @apply pointer-events-none bg-blue/30 opacity-40;
+    }
+
+    .text-primary {
+        @apply text-blue;
+    }
+
+    .bg-primary {
+        @apply bg-white;
+    }
+
+    .bg-danger {
+        @apply bg-pastel-red;
+    }
+
+    .errors {
+        @apply line-through decoration-pastel-red/30 w-full text-center decoration-2;
+    }
+}
+
+@layer components {
+    .border-primary {
+        @apply border-blue border-[1px] border-solid rounded-lg;
+    }
+
+    .button_to {
+        @apply border-0 m-0 p-0 p-2 border-primary border-2 border-solid flex items-center justify-center;
+    }
+
+    .button {
+        @apply py-2 px-2 rounded-full flex items-center justify-center cursor-pointer shadow-primary !important;
+    }
+
+    .button-primary {
+        @apply text-white bg-green hover:bg-dark-green hover:no-underline hover:text-white;
+    }
+
+    .button-decline {
+        @apply text-white bg-pastel-red hover:bg-dark-red hover:no-underline hover:text-white;
+    }
+
+    .button-secondary {
+        @apply text-white bg-blue hover:bg-pastel-blue hover:no-underline hover:text-white;
+    }
+
+
+    .button-normal {
+        @apply w-[6rem] !important;
+    }
+
+    .button-mini {
+        @apply w-[4rem] text-xs !important;
+    }
+
+    .button-large {
+        @apply min-w-[10rem];
+    }
+
+    .button-calendar {
+        @apply bg-blue text-white flex items-center h-[1.5rem] justify-center m-[2px] hover:bg-pastel-blue text-[12px] hover:no-underline hover:text-white;
+    }
+
+    .calendar-link {
+        @apply cursor-pointer text-white hover:bg-pastel-blue;
+    }
+
+    .calendar-tag {
+        @apply bg-primary border-primary p-2 text-primary font-semibold flex items-center justify-center;
+    }
+
+    .card {
+        @apply rounded-md shadow-primary p-2 hover:shadow-lg cursor-pointer;
+    }
+
+    .form-item {
+        @apply col-span-2  flex flex-col items-center justify-center p-2;
+    }
+
+    .form-check-boxes {
+        @apply w-full h-full border-primary border-2 grid grid-cols-2 gap-0  p-2 !important;
+    }
+
+
+    .form-check {
+        @apply col-span-2 flex flex-col items-center justify-between ;
+    }
+
+    .form-action {
+        @apply col-span-2 mt-4 flex flex-col items-center justify-center p-4 mx-8;
+    }
+
+    .shadow-primary {
+        @apply shadow-lg shadow-blue/50;
+    }
+}

@@ -1,0 +1,21 @@
+<%= content_tag :td, class: "#{classes} #{"bg-pastel-red/20" if is_holiday?(day) || day.wday.zero?}" do %>
+  <%= yield %>
+  <%= link_to day, daily_index_working_times_path(day: day), class:"button button-secondary button-full" %>
+  <div class="flex items-center justify-center mt-2">
+    <div class="text-sm font-bold mr-4">
+      <%= t("total_sum") %>
+    </div>
+    <div class="text-sm font-semibold">
+      <%= total_sum(events) %>
+    </div>
+  </div>
+  <%= link_to t("new"), new_working_time_path(date: day), class: "button button-primary button-full mt-4" %>
+  <div class="text-sm font-normal mt-4 flex items-center justify-center">
+    <%= is_holiday?(day) ? holiday_name(day) : "-" %>
+  </div>
+  <% if action_name == "weekly_index" %>
+    <div class="overflow-scroll h-[10vh]">
+      <%= render partial: "working_times/events", locals: { events: events, classes: "text-xs grid grid-cols-3 gap-2" } %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,9 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl"><%= t("new") %></h1>
+
+  <%= render "form", working_time: @working_time %>
+
+  <div class="flex items-center justify-center mt-4">
+    <%= link_to t("back"), working_times_path, class: "button button-secondary button-normal" %>
+  </div>
+</div>

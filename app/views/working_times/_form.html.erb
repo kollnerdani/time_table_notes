@@ -1,0 +1,47 @@
+<%= form_with(model: working_time) do |form| %>
+  <% if working_time.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(working_time.errors.count, "error") %> prohibited this working_time from being saved:</h2>
+
+      <ul>
+        <% working_time.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if form.object.persisted? %>
+    <div class="form-item">
+      <%= form.object.start_time.to_date %>
+      <%= form.hidden_field :date, value: form.object.start_time.to_date %>
+    </div>
+  <% else %>
+    <div class="form-item">
+      <%= form.object.date %>
+      <%= form.hidden_field :date, value: form.object.date %>
+    </div>
+  <% end %>
+  <div class="form-item">
+    <%= form.label :start_time %>
+    <%= form.time_select :start_time, minute_step: 60   %>
+  </div>
+
+  <div class="form-item">
+    <%= form.label :duration %>
+    <%= form.select :duration, (1..8).to_a.map{ |hour| [t("hour", hour: hour), hour]} %>
+  </div>
+
+  <div class="form-item">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="form-item">
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 4 %>
+  </div>
+
+  <div class="form-action">
+    <%= form.submit value: action_name == "new" ? t("save") : t("update"), class: "button button-primary button-full" %>
+  </div>
+<% end %>

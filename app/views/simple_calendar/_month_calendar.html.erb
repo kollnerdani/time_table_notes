@@ -1,0 +1,31 @@
+<div class="w-full">
+  <%= render partial: 'simple_calendar/calendar_header', locals: { title: t("monthly", month: t('date.month_names')[start_date.month]), time: start_date, center: t('date.month_names')[start_date.month],
+                                                                   previous_path: calendar.url_for_previous_view,
+                                                                   next_path:   calendar.url_for_next_view  } %>
+  <div class="overflow-scroll h-[35rem]">
+    <table>
+      <thead class="sticky top-0 opacity-85">
+        <tr>
+          <% date_range.slice(0, 7).each do |day| %>
+            <th><%= t('date.abbr_day_names')[day.wday] %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% date_range.each_slice(7) do |week| %>
+          <tr>
+            <% week.each do |day| %>
+              <%= render "working_times/day", day: day, events: calendar.sorted_events_for(day), classes: "border-primary p-4 h-[17.5rem]" do %>
+                <% instance_exec(&passed_block) %>
+              <% end %>
+            <% end %>
+            <td>
+              <%= link_to week.first.cweek ,weekly_index_working_times_path(day: week[0]), class: "button button-secondary button-normal" %>
+            </td>
+          </tr>
+        <% end %>
+        <%= render partial: "working_times/total_sum", locals: { events: sorted_events.values.flatten } %>
+      </tbody>
+    </table>
+  </div>
+</div>

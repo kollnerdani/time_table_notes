@@ -1,0 +1,14 @@
+<%= turbo_stream.replace "search-results" do %>
+  <div class="p-4 shadow-primary grid grid-cols-3">
+    <div class="col-span-1">
+      <%= search.start_date %>
+    </div>
+    <div class="col-span-1">
+      <%= search.end_date %>
+    </div>
+    <div class="col-span-1 flex items-center justify-between">
+      <%= t("total_sum") %>
+      <%= total_sum(results) %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+<% events.each do |working_time| %>
+  <%= link_to working_time_path(working_time), class: "card #{classes}" do %>
+    <div class="col-span-1">
+      <%= action_name == "daily_index" ? working_time.title : working_time.title.truncate(4)  %>
+    </div>
+    <div class="col-span-1">
+      <%= working_time.start_time.to_fs(:time) %>
+    </div>
+    <div class="col-span-1">
+      <%= t("hour", hour: total_sum(Array(working_time))) %>
+    </div>
+    <% if action_name == "daily_index" %>
+      <div class="col-span-1">
+        <%= working_time.description.truncate(8) %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

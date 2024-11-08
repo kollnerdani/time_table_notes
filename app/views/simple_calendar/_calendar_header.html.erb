@@ -1,0 +1,15 @@
+<div class="grid grid col-span-12 gap-4 mb-4">
+  <div datetime="<%= time %>" class="col-span-1 col-start-1 calendar-tag w-[10rem]"><%= time.to_date %></div>
+  <div class="col-span-1 col-start-7 calendar-tag">
+    <%= title %>
+  </div>
+</div>
+<div class="grid grid-cols-12 my-2">
+  <nav class="col-span-3 grid grid-cols-3 gap-4">
+    <%= link_to t('simple_calendar.previous', default: 'Previous'), previous_path, class: 'button button-primary col-span-1' %>
+    <div class="button bg-white text-dark-green col-span-1 pointer-events-none text-sm">
+      <%= center %>
+    </div>
+    <%= link_to t('simple_calendar.next'), next_path, class: 'button button-primary col-span-1' %>
+  </nav>
+</div>

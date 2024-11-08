@@ -1,0 +1,8 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">Editing working time</h1>
+
+  <%= render "form", working_time: @working_time %>
+
+  <%= link_to t("show"), @working_time, class: "button button-secondary button-normal" %>
+  <%= link_to t("back"), working_times_path, class: "button button-secondary button-normal" %>
+</div>

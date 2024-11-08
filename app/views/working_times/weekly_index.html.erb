@@ -1,0 +1,4 @@
+<%= week_calendar(events: @working_times) do |date| %>
+  <%= date %>
+<% end %>
+<%= link_to t("back"), working_times_path, class: "button button-secondary button-normal" %>

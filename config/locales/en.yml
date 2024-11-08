@@ -1,0 +1,61 @@
+en:
+  christmas: Karácsony
+  hour: "%{hour} óra"
+  daily: "Napi bontás %{day}"
+  weekly: "Heti bontás %{week}"
+  monthly: "Havi bontás %{month}"
+  back: Vissza
+  edit: Módosít
+  update: Módosít
+  new: Új
+  destroy: Töröl
+  save: Elment
+  create: Elment
+  show: Mutat
+  week: "%{week}. hét"
+  total_sum: "Összes munkaóra:"
+  successfully_destroyed: Sikeresen törölve
+  successfully_updated: Sikeresen módosítva
+  successfully_created: Sikeresen létrehozva
+  search: Keres
+  activerecord:
+    model:
+      working_time: Munkaidő Bejegyzés
+    attributes:
+      working_time:
+        start_time: Kezdés
+        end_time: Vége
+        duration: Időtartam
+        title: Cím
+        description: Leírás
+    errors:
+      models:
+        working_time:
+          attributes:
+            end_time:
+              occupied: Ez az idősáv már foglalt!
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+    day_names: [ Vasárnap, Héfő, Kedd, Szerda, Csütörtök, Péntek, Szombat ]
+    abbr_day_names: [ V, H, K, Sz, Cs, P, Szo ]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [ ~, Január, Február, Március, Április, Május, Június, Július, Augusztus, Szeptember, Október, November, December ]
+    abbr_month_names: [ ~, Jan, Febr, Márc, Ápr, Máj, Jún, Júl, Aug, Szept, Okt, Nov, Dec ]
+    # Used in date_select and datetime_select.
+    order:
+      - :year
+      - :month
+      - :day
+
+  simple_calendar:
+    next: Következő
+    previous: Előző
+    today: Ma

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: <%= Time.zone.now + 1.days %>
+  user: one
+  end_time: <%= Time.zone.now + 1.days + 1.hours %>
+  title: MyString
+  description: MyText
+
+two:
+  start_time: <%= Time.zone.now + 3.minutes %>
+  user: two
+  end_time: <%= Time.zone.now + 63.minutes %>
+  title: MyString
+  description: MyText
