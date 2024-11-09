@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 3.2.5
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
+  bundle install
 
 * Database creation
-
+  rails db:create
 * Database initialization
-
+  rails db:migrate
+  rails db:seed
+* Rails console  
+  update User.last with new password
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  rubocop
+  rails test
+  rails test:system
+* server
+  dev
+Wednesday ≈ 1 hour
+Thursday ≈ 1 hour
+Friday ≈ 3 hour
+Saturday ≈ 3 hour
