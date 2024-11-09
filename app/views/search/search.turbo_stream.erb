@@ -1,16 +1,15 @@
-<%= turbo_stream.replace "search-results" do %>
-  <div class="p-4 shadow-primary grid grid-cols-3 gap-4 bg-white">
+<%= turbo_stream.update "search-results" do %>
+  <div class="p-4 shadow-primary grid grid-cols-3 gap-4 bg-white" id="search-results">
     <div class="col-span-3 text-lg font-semibold flex items-center justify-center p-4">
       <%= t("search_result") %>
     </div>
-    <div class="col-span-1">
-      <%= search.start_date %>
-    </div>
-    <div class="col-span-1">
+    <div class="col-span-1 col-start-2 flex items-center justify-center font-bold">
+      <%= search.start_date %> -
       <%= search.end_date %>
     </div>
-    <div class="col-span-1 flex items-center justify-between">
-      <%= render partial: "working_times/total_sum", locals: { events: results } %>
+    <div class="col-span-3 flex items-center justify-between">
+      <%= render partial: "working_times/total_sum", locals: { events: results, start_date: search.start_date.to_date, end_date: search.end_date.to_date } %>
     </div>
   </div>
+  <%= line_chart data, title: t("activerecord.model.working_time") %>
 <% end %>

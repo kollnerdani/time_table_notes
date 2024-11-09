@@ -4,7 +4,8 @@ class SearchController < ApplicationController
     if search.valid?
       @search_results = search.results(current_user)
       respond_to do |format|
-        format.turbo_stream { render :search, locals: { results: @search_results, search: search } }
+        data = ChartKickData.call(@search_results, search)
+        format.turbo_stream { render :search, locals: { results: @search_results, search: search, data: data } }
       end
     else
       redirect_to root_path, notice: search.errors.messages

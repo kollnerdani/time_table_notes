@@ -6,9 +6,9 @@
 
     <%= render @working_time %>
 
-    <%= link_to t("edit"), edit_working_time_path(@working_time), class: "button button-primary button-normal" %>
-    <%= link_to t("back"), working_times_path, class: "button button-secondary button-normal" %>
-    <div class="inline-block ml-2">
+    <div class="flex items-center justify-center">
+      <%= link_to t("edit"), edit_working_time_path(@working_time), class: "button button-primary button-normal mr-4" %>
+      <%= link_to t("back"), working_times_path, class: "button button-secondary button-normal mr-4" %>
       <%= link_to t("destroy"), @working_time, data: { turbo_method: :delete }, class: "button button-decline button-normal" %>
     </div>
   </div>

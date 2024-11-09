@@ -1,27 +1,21 @@
-<div id="<%= dom_id working_time %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Start time:</strong>
-    <%= working_time.start_time %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= working_time.user_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">End time:</strong>
-    <%= working_time.end_time %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
+<div id="<%= dom_id working_time %>" class="bg-white p-8 border-primary shadow-primary h-[25rem] mb-4">
+  <div class="flex items-center justify-between mb-4">
+    <strong class="font-semibold mb-1"><%= t("activerecord.attributes.working_time.title") %>:</strong>
     <%= working_time.title %>
-  </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
+  <div class="flex items-center justify-between mb-4">
+    <strong class="font-semibold mb-1"><%= t("activerecord.attributes.working_time.start_time") %>:</strong>
+    <%= working_time.start_time.strftime("%Y-%m-%d %H:%M") %>
+  </div>
+
+  <div class="flex items-center justify-between mb-4">
+    <strong class="font-semibold mb-1"><%= t("activerecord.attributes.working_time.end_time") %>:</strong>
+    <%= working_time.end_time.strftime("%Y-%m-%d %H:%M") %>
+  </div>
+
+  <div class="p-4 border-primary overflow-scroll h-[10.5rem]">
+    <strong class="font-semibold mb-1"><%= t("activerecord.attributes.working_time.description") %>:</strong>
     <%= working_time.description %>
-  </p>
-
+  </div>
 </div>

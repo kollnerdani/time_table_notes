@@ -3,7 +3,7 @@ class WorkingTime < ApplicationRecord
   attr_accessor :duration, :date
   before_validation :set_start_time, if: :start_time
   before_validation :set_end_time, if: :duration
-  validates :start_time, :duration, :title, :description, :title, presence: true, allow_blank: false
+  validates :start_time, :duration, :title, :description, presence: true, allow_blank: false
   validates :start_time, comparison: { greater_than: Time.zone.now }
   validates :end_time, comparison: { greater_than: :start_time }
   validate :start_time_and_end_time_are_free

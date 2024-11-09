@@ -1,8 +1,6 @@
 <%= form_with(model: working_time) do |form| %>
   <% if working_time.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(working_time.errors.count, "error") %> prohibited this working_time from being saved:</h2>
-
       <ul>
         <% working_time.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -42,6 +40,6 @@
   </div>
 
   <div class="form-action">
-    <%= form.submit value: action_name == "new" ? t("save") : t("update"), class: "button button-primary button-full" %>
+    <%= form.submit value: action_name == "new" ? t("save") : t("update"), class: "button button-primary button-normal" %>
   </div>
 <% end %>

@@ -63,3 +63,5 @@ gem "devise", "~> 4.9"
 gem "holidays", "~> 8.7.1"
 
 gem "simple_calendar"
+
+gem "chartkick", "~> 5.1"

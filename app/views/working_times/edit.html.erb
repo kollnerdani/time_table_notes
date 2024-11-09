@@ -3,6 +3,8 @@
 
   <%= render "form", working_time: @working_time %>
 
-  <%= link_to t("show"), @working_time, class: "button button-secondary button-normal" %>
-  <%= link_to t("back"), working_times_path, class: "button button-secondary button-normal" %>
+  <div class="flex items-center justify-center mt-4">
+    <%= link_to t("show"), @working_time, class: "button button-secondary button-normal mr-4" %>
+    <%= link_to t("back"), working_times_path, class: "button button-secondary button-normal" %>
+  </div>
 </div>

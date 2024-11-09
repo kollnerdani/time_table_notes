@@ -20,6 +20,6 @@ class WorkingTimesHelperTest < ActiveSupport::TestCase
 
   test "#get_capacity" do
     working_time = WorkingTime.new(start_time: "2024-01-02 8:00", end_time: "2024-01-02 10:00")
-    assert_equal get_capacity(Array(working_time), "daily_index"), 25.0
+    assert_equal get_capacity(Array(working_time), "daily_index", working_time.start_time.to_date, working_time.start_time.to_date), 25.0
   end
 end

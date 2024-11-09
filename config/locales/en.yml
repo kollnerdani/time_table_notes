@@ -1,4 +1,7 @@
 en:
+  errors:
+    messages:
+      blank: Ne hagyd üresen!
   christmas: Karácsony
   hour: "%{hour} óra"
   daily: "Napi bontás %{day}"
@@ -35,6 +38,9 @@ en:
         duration: Időtartam
         title: Cím
         description: Leírás
+      search:
+        start_date: Hello
+        end_date: Hello2
     errors:
       models:
         working_time:
