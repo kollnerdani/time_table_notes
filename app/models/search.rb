@@ -11,6 +11,6 @@ class Search
   end
 
   def results(user)
-    user.working_times.where(start_time: @start_date..@end_date).order(:start_time)
+    user.working_times.where(start_time: @start_date.to_date..(@end_date.to_date + 1.days)).order(:start_time)
   end
 end

@@ -12,6 +12,14 @@ class WorkingTime < ApplicationRecord
     IsHoliday.call(start_time)
   end
 
+  def is_weekend?
+    [ 0, 6 ].include?(start_time.wday)
+  end
+
+  def not_working_day?
+    is_weekend? || is_holiday?
+  end
+
   def holiday_name
     Holidays.on(start_time, :hu).last[:name]
   end
@@ -27,7 +35,7 @@ class WorkingTime < ApplicationRecord
   private
 
   def set_end_time
-    self.end_time = self.start_time + self.duration.to_i.hours
+    self.end_time = self.start_time + self.duration.to_i.hours - 1.seconds
   end
 
   def set_start_time

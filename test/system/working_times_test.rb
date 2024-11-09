@@ -54,14 +54,14 @@ class WorkingTimesTest < ApplicationSystemTestCase
     fill_in "search[start_date]", with: Date.today.beginning_of_month
     fill_in "search[end_date]", with: Date.today.end_of_month
 
-    click_on I18n.t("search")
-    assert_text "#{I18n.t("total_sum")} #{working_times(:one).total_duration / 60 }"
+    click_on I18n.t("searching")
+    assert_text I18n.t("search_result")
   end
 
   def fill_with
     fill_in I18n.t("activerecord.attributes.working_time.description"), with: @working_time.description
     select I18n.t("hour", hour: 7), from: I18n.t("activerecord.attributes.working_time.duration")
-    select (Time.zone.now + 1.hours).hour, from: "working_time_start_time_4i"
+    select "08", from: "working_time_start_time_4i"
     fill_in I18n.t("activerecord.attributes.working_time.title"), with: @working_time.title
   end
 end

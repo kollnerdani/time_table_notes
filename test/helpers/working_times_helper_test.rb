@@ -2,7 +2,6 @@ require "test_helper"
 
 class WorkingTimesHelperTest < ActiveSupport::TestCase
   include WorkingTimesHelper
-
   test "#total_sum" do
     assert_equal total_sum(working_times), 2.0
   end
@@ -17,5 +16,9 @@ class WorkingTimesHelperTest < ActiveSupport::TestCase
 
   test "#holiday_name" do
     assert_equal holiday_name("2024-12-25"), I18n.t("christmas")
+  end
+
+  test "#get_capacity" do
+    assert_equal get_capacity(working_times, "index"), 2
   end
 end

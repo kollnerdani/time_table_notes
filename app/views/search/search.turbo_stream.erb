@@ -1,5 +1,8 @@
 <%= turbo_stream.replace "search-results" do %>
-  <div class="p-4 shadow-primary grid grid-cols-3">
+  <div class="p-4 shadow-primary grid grid-cols-3 gap-4 bg-white">
+    <div class="col-span-3 text-lg font-semibold flex items-center justify-center p-4">
+      <%= t("search_result") %>
+    </div>
     <div class="col-span-1">
       <%= search.start_date %>
     </div>
@@ -7,8 +10,7 @@
       <%= search.end_date %>
     </div>
     <div class="col-span-1 flex items-center justify-between">
-      <%= t("total_sum") %>
-      <%= total_sum(results) %>
+      <%= render partial: "working_times/total_sum", locals: { events: results } %>
     </div>
   </div>
 <% end %>

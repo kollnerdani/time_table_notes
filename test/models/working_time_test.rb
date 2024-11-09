@@ -41,6 +41,15 @@ class WorkingTimeTest < ActiveSupport::TestCase
     assert_not working_time.is_holiday?
   end
 
+  test "#is_weekend?" do
+    working_time = WorkingTime.new(start_time: "2024-11-10")
+    assert working_time.is_weekend?
+  end
+
+  test "#is_weekend? false" do
+    working_time = WorkingTime.new(start_time: "2024-11-11")
+    assert_not working_time.is_weekend?
+  end
 
   test "#holiday_name" do
     working_time = WorkingTime.new(start_time: "2024-12-25")

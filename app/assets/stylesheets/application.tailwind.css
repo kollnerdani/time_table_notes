@@ -47,8 +47,8 @@
         @apply bg-white rounded-md border-primary min-w-full ring-1 ring-blue focus:border-primary focus:ring-2 focus:ring-blue text-blue placeholder-blue !important;
     }
 
-    input[type='checkbox'] {
-        @apply rounded-full bg-white cursor-pointer w-4 h-4 border-primary ring-0 ring-offset-0 active:ring-0 focus:ring-0 checked:ring-0 checked:ring-offset-0 checked:bg-dark-green checked:border-0 active:border-0 focus:ring-offset-0 !important;
+    input[type='date'] {
+        @apply bg-white rounded-md border-primary min-w-full ring-1 ring-blue focus:border-primary focus:ring-2 focus:ring-blue text-blue placeholder-blue !important;
     }
 
     input[type='radio'] {

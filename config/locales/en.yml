@@ -13,11 +13,18 @@ en:
   create: Elment
   show: Mutat
   week: "%{week}. hét"
-  total_sum: "Összes munkaóra:"
+  total_sum: "Összes munkaóra"
+  capacity: Kapacitás munkanapon
+  working_day: Munkanapon
+  weekend_or_holiday: Hétvégén/Ünnepnapon
   successfully_destroyed: Sikeresen törölve
   successfully_updated: Sikeresen módosítva
   successfully_created: Sikeresen létrehozva
-  search: Keres
+  searching: Keress
+  search:
+    start_date: Kezdés
+    end_date: Vége
+  search_result: A keresés eredménye
   activerecord:
     model:
       working_time: Munkaidő Bejegyzés
