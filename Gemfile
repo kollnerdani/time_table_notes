@@ -60,7 +60,7 @@ end
 
 gem "devise", "~> 4.9"
 
-gem "holidays", "~> 8.7.1"
+gem "holidays", "~> 8.8.0"
 
 gem "simple_calendar"
 
