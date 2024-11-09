@@ -17,7 +17,8 @@
   rails test:system
 * server
   dev
-Wednesday ≈ 1 hour
-Thursday ≈ 1 hour
-Friday ≈ 3 hour
-Saturday ≈ 3 hour
+* Working hours
+  Wednesday ≈ 1 hour
+  Thursday ≈ 1 hour
+  Friday ≈ 3 hour
+  Saturday ≈ 3 hour
