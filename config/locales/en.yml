@@ -38,9 +38,6 @@ en:
         duration: Időtartam
         title: Cím
         description: Leírás
-      search:
-        start_date: Hello
-        end_date: Hello2
     errors:
       models:
         working_time:
