@@ -16,7 +16,7 @@
       <% date_range.each_slice(7) do |week| %>
         <tr>
           <% week.each do |day| %>
-            <%= render "working_times/day", day: day, events: calendar.sorted_events_for(day), classes: "border-primary p-4 h-[70vh]" do %>
+            <%= render "working_times/day", day: day, events: calendar.sorted_events_for(day), is_date_part_of_view: true, classes: "border-primary p-4 h-[70vh]" do %>
               <% instance_exec(&passed_block) %>
             <% end %>
           <% end %>

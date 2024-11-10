@@ -15,12 +15,12 @@
         <% date_range.each_slice(7) do |week| %>
           <tr>
             <% week.each do |day| %>
-              <%= render "working_times/day", day: day, events: calendar.sorted_events_for(day), classes: "border-primary p-4 h-[17.5rem]" do %>
+              <%= render "working_times/day", day: day, events: calendar.sorted_events_for(day), is_date_part_of_view: day.between?(@start_date.beginning_of_month, @start_date.end_of_month), classes: "border-primary p-4 h-[17.5rem]" do %>
                 <% instance_exec(&passed_block) %>
               <% end %>
             <% end %>
             <td>
-              <%= link_to week.first.cweek ,weekly_index_working_times_path(day: week[0]), class: "button button-secondary button-normal" %>
+              <%= link_to week.first.cweek ,weekly_index_working_times_path(start_date: week[0]), class: "button button-secondary button-normal" %>
             </td>
           </tr>
         <% end %>

@@ -4,7 +4,7 @@ class WorkingTimesController < ApplicationController
   # GET /working_times or /working_times.json
   def index
     @start_date = params[:start_date].present? ? params[:start_date].to_date : Date.current
-    @working_times = current_user.working_times.where(start_time: @start_date.beginning_of_month..(@start_date.end_of_month + 1.day)).order(start_time: :asc)
+    @working_times = current_user.working_times.where(start_time: @start_date.beginning_of_month..(@start_date.end_of_month + 1.days)).order(start_time: :asc)
   end
 
   def daily_index
@@ -14,7 +14,7 @@ class WorkingTimesController < ApplicationController
 
   def weekly_index
     @day = params[:start_date].present? ? params[:start_date].to_date : Date.current
-    @working_times = current_user.working_times.where(start_time: @day.beginning_of_week..(@day.end_of_day + 1.days)).order(start_time: :asc)
+    @working_times = current_user.working_times.where(start_time: @day.beginning_of_week..(@day.end_of_week + 1.days)).order(start_time: :asc)
   end
 
   # GET /working_times/1 or /working_times/1.json

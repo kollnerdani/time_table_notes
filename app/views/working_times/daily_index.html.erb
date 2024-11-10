@@ -8,7 +8,15 @@
   </div>
   <div class="col-span-1">
     <div class="m-4">
-      <%= is_holiday?(@day) ? holiday_name(@day) : "-" %>
+      <% if is_holiday?(@day)  %>
+        <div class="text-pastel-red/50 bg-white p-5 rounded-lg">
+          <%= holiday_name(@day) %>
+        </div>
+      <% else %>
+        <div>
+          -
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="col-span-1">
