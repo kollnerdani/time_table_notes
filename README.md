@@ -22,3 +22,4 @@
   Thursday ≈ 1 hour
   Friday ≈ 3 hour
   Saturday ≈ 3 hour
+  Sanday ≈ 1 hour 
